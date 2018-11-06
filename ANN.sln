@@ -1,0 +1,48 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rosenblatt", "Rozenblatt\Rosenblatt.csproj", "{97BB8301-33A7-470F-A042-BC477D84AE3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiPerceptron", "MultiPerceptron\MultiPerceptron.csproj", "{1B0689B8-2658-4EB6-9F72-2BB15D8C1E45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97BB8301-33A7-470F-A042-BC477D84AE3C}.Debug|x86.ActiveCfg = Debug|x86
+		{97BB8301-33A7-470F-A042-BC477D84AE3C}.Debug|x86.Build.0 = Debug|x86
+		{97BB8301-33A7-470F-A042-BC477D84AE3C}.Release|x86.ActiveCfg = Release|x86
+		{97BB8301-33A7-470F-A042-BC477D84AE3C}.Release|x86.Build.0 = Release|x86
+		{1B0689B8-2658-4EB6-9F72-2BB15D8C1E45}.Debug|x86.ActiveCfg = Debug|x86
+		{1B0689B8-2658-4EB6-9F72-2BB15D8C1E45}.Debug|x86.Build.0 = Debug|x86
+		{1B0689B8-2658-4EB6-9F72-2BB15D8C1E45}.Release|x86.ActiveCfg = Release|x86
+		{1B0689B8-2658-4EB6-9F72-2BB15D8C1E45}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.FileWidth = 80
+		$1.TabsToSpaces = True
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.NewLinesForBracesInTypes = False
+		$2.NewLinesForBracesInMethods = False
+		$2.NewLinesForBracesInProperties = False
+		$2.NewLinesForBracesInAccessors = False
+		$2.NewLinesForBracesInAnonymousMethods = False
+		$2.NewLinesForBracesInControlBlocks = False
+		$2.NewLinesForBracesInAnonymousTypes = False
+		$2.NewLinesForBracesInObjectCollectionArrayInitializers = False
+		$2.NewLinesForBracesInLambdaExpressionBody = False
+		$2.NewLineForElse = False
+		$2.NewLineForCatch = False
+		$2.NewLineForFinally = False
+		$2.scope = text/x-csharp
+		$2.NewLineForMembersInObjectInit = False
+		$2.NewLineForMembersInAnonymousTypes = False
+		$2.NewLineForClausesInQuery = False
+		$2.SpaceAfterCast = True
+	EndGlobalSection
+EndGlobal
