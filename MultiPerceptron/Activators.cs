@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 namespace MultiPerceptron {
 
-	static class Activators {
+	public static class Activators {
 
-		internal static double A = 1.0, B = 1.0;
-		internal static Dictionary<int, Func<double, double>> dict;
+		public const double DEF_A = 1.7159, DEF_B = 2.0 / 3.0;
+		public static double A = DEF_A, B = DEF_B;
+		public static Dictionary<int, Func<double, double>> dict;
 
 		static Activators() {
 			dict = new Dictionary<int, Func<double, double>>(8) {

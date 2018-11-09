@@ -70,6 +70,7 @@
     <Compile Include="Activators.cs" />
     <Compile Include="DataEngine.cs" />
     <Compile Include="Perceptron.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

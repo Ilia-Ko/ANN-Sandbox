@@ -1141,7 +1141,7 @@ ELU:  a·(e^x-1), b·x</property>
                                   <widget class="Gtk.CheckButton" id="checkCorrel">
                                     <property name="MemberName" />
                                     <property name="CanFocus">True</property>
-                                    <property name="Label" translatable="yes">Do Decorrelation</property>
+                                    <property name="Label" translatable="yes">Do Decorrelation (LMS)</property>
                                     <property name="DrawIndicator">True</property>
                                     <property name="HasLabel">True</property>
                                     <property name="UseUnderline">True</property>
@@ -1154,10 +1154,10 @@ ELU:  a·(e^x-1), b·x</property>
                                   </packing>
                                 </child>
                                 <child>
-                                  <widget class="Gtk.CheckButton" id="checkWhite">
+                                  <widget class="Gtk.CheckButton" id="checkStandard">
                                     <property name="MemberName" />
                                     <property name="CanFocus">True</property>
-                                    <property name="Label" translatable="yes">Do Whitening</property>
+                                    <property name="Label" translatable="yes">Do Standartization</property>
                                     <property name="DrawIndicator">True</property>
                                     <property name="HasLabel">True</property>
                                     <property name="UseUnderline">True</property>
@@ -1340,7 +1340,7 @@ ELU:  a·(e^x-1), b·x</property>
                             <property name="Upper">1</property>
                             <property name="PageIncrement">0.33</property>
                             <property name="StepIncrement">0.001</property>
-                            <property name="Value">0.03</property>
+                            <property name="Value">0.026</property>
                             <property name="DrawValue">True</property>
                             <property name="Digits">3</property>
                             <property name="ValuePos">Top</property>

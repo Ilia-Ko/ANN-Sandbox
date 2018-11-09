@@ -75,7 +75,7 @@ namespace MultiPerceptron {
 			configuration.smartScaleFactor = hscaleSmartScale.Value;
             // update data engine
 			DataEngine.DoDecorrelation = checkCorrel.Active;
-			DataEngine.DoWhitening = checkWhite.Active;
+			DataEngine.DoStandartization = checkStandard.Active;
 			DataEngine.FilePath = entryFile.Text;
 		}
 		protected void ButtonFile(object sender, EventArgs e) {
