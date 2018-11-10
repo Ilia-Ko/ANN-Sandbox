@@ -84,7 +84,7 @@ public partial class MainWindow : Window {
 
         // save
 		if (dialog.Run() == (int) ResponseType.Accept)
-			ann.Save(dialog.Filename);
+			Perceptron.Save(dialog.Filename, ann);
 	}
 	protected void ButtonLoad(object sender, EventArgs e) {
 		// get file
@@ -96,7 +96,7 @@ public partial class MainWindow : Window {
         // load
         if (dialog.Run() == (int) ResponseType.Accept) {
 			conf.initialized = false;
-			ann = new Perceptron(dialog.Filename);
+			ann = Perceptron.Load(dialog.Filename);
 			UpdatePerceptron();
 		}
 

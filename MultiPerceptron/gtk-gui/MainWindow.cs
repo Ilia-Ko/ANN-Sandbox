@@ -138,9 +138,10 @@ public partial class MainWindow
 		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
 		this.textConfig = new global::Gtk.TextView();
-		this.textConfig.CanFocus = true;
 		this.textConfig.Name = "textConfig";
 		this.textConfig.Editable = false;
+		this.textConfig.CursorVisible = false;
+		this.textConfig.AcceptsTab = false;
 		this.GtkScrolledWindow.Add(this.textConfig);
 		this.vbox2.Add(this.GtkScrolledWindow);
 		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.GtkScrolledWindow]));

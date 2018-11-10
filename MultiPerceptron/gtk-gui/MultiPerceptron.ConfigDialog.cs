@@ -74,7 +74,7 @@ namespace MultiPerceptron
 
 		private global::Gtk.CheckButton checkCorrel;
 
-		private global::Gtk.CheckButton checkWhite;
+		private global::Gtk.CheckButton checkStandard;
 
 		private global::Gtk.Label GtkLabel4;
 
@@ -452,7 +452,7 @@ namespace MultiPerceptron
 			this.checkCorrel = new global::Gtk.CheckButton();
 			this.checkCorrel.CanFocus = true;
 			this.checkCorrel.Name = "checkCorrel";
-			this.checkCorrel.Label = global::Mono.Unix.Catalog.GetString("Do Decorrelation");
+			this.checkCorrel.Label = global::Mono.Unix.Catalog.GetString("Do Decorrelation (LMS)");
 			this.checkCorrel.DrawIndicator = true;
 			this.checkCorrel.UseUnderline = true;
 			this.vbox10.Add(this.checkCorrel);
@@ -461,14 +461,14 @@ namespace MultiPerceptron
 			w28.Expand = false;
 			w28.Fill = false;
 			// Container child vbox10.Gtk.Box+BoxChild
-			this.checkWhite = new global::Gtk.CheckButton();
-			this.checkWhite.CanFocus = true;
-			this.checkWhite.Name = "checkWhite";
-			this.checkWhite.Label = global::Mono.Unix.Catalog.GetString("Do Whitening");
-			this.checkWhite.DrawIndicator = true;
-			this.checkWhite.UseUnderline = true;
-			this.vbox10.Add(this.checkWhite);
-			global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.vbox10[this.checkWhite]));
+			this.checkStandard = new global::Gtk.CheckButton();
+			this.checkStandard.CanFocus = true;
+			this.checkStandard.Name = "checkStandard";
+			this.checkStandard.Label = global::Mono.Unix.Catalog.GetString("Do Standartization");
+			this.checkStandard.DrawIndicator = true;
+			this.checkStandard.UseUnderline = true;
+			this.vbox10.Add(this.checkStandard);
+			global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.vbox10[this.checkStandard]));
 			w29.Position = 2;
 			w29.Expand = false;
 			w29.Fill = false;
@@ -587,7 +587,7 @@ namespace MultiPerceptron
 			this.hscaleMomentum.Adjustment.Upper = 1D;
 			this.hscaleMomentum.Adjustment.PageIncrement = 0.33D;
 			this.hscaleMomentum.Adjustment.StepIncrement = 0.001D;
-			this.hscaleMomentum.Adjustment.Value = 0.03D;
+			this.hscaleMomentum.Adjustment.Value = 0.026D;
 			this.hscaleMomentum.DrawValue = true;
 			this.hscaleMomentum.Digits = 3;
 			this.hscaleMomentum.ValuePos = ((global::Gtk.PositionType)(2));

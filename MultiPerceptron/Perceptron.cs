@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics.Distributions;
@@ -7,6 +8,7 @@ using MathNet.Numerics.Random;
 
 namespace MultiPerceptron {
 
+    [Serializable]
     public class Perceptron {
     
         public enum Method {
@@ -32,18 +34,8 @@ namespace MultiPerceptron {
 			conf = configuration;
 			Construct(true);
 	    }
-        public Perceptron(string dataFilePath) {
-            // create random
-			Random source = new MersenneTwister(RandomSeed.Robust(), true);
-			distrib = new ContinuousUniform(-RND_BOUND, +RND_BOUND, source);
-			// init
-			filePath = dataFilePath;
-			conf = new Config();
-			Construct(true);
-			Read(filePath);
-		}
 		void Construct(bool zeroInit) {
-			weights = new Matrix<double>[conf.numHidLayers + 1];
+			weights = new Matrix<double>[conf.numHidLayers + 2];
 			int prev, next;
 
 			prev = conf.numInputs;
@@ -60,17 +52,31 @@ namespace MultiPerceptron {
 
 		// neuro
         public void Reset() {
-			if (File.Exists(filePath))
-				Read(filePath);
-			else
+			if (File.Exists(filePath)) {
+				Perceptron old = Load(filePath);
+				old.weights.CopyTo(weights, 0);
+			} else {
 				Construct(true);
+			}
+			
 		}
         public void Randomize() {
 			Construct(false);
 		}
 		public Vector<double> Response(Vector<double> input) {
-            // TODO: forward prop
-			return null;
+			if (input.Count != weights[0].ColumnCount)
+                throw new Exception("Dimension mismatch.");
+
+			Vector<double> temp = CreateVector.DenseOfVector(input);
+			var fx = Activators.dict[conf.func];
+
+            for (int i = 0; i <= conf.numHidLayers + 1; i++) {
+				temp = weights[i] * temp;
+				for (int j = 0; j < temp.Count; j++)
+					temp[j] = fx(temp[j]);
+			}
+
+			return temp;
 		}
         public void BeginLearn(DataPoint[] trainSet) {
             // TODO: learning management
@@ -80,11 +86,19 @@ namespace MultiPerceptron {
 		}
 
 		// utils
-		public void Save(string dataFilePath) {
-            // TODO: write file
+		public static void Save(string dataFilePath, Perceptron perceptron) {
+			FileStream stream = File.OpenWrite(dataFilePath);
+			BinaryFormatter formatter = new BinaryFormatter();
+			formatter.Serialize(stream, perceptron);
+			stream.Flush();
+			stream.Close();
 		}
-        void Read(string dataFilePath) {
-			// TODO: read file
+        public static Perceptron Load(string dataFilePath) {
+			FileStream stream = File.OpenRead(dataFilePath);
+			BinaryFormatter formatter = new BinaryFormatter();
+			Perceptron perceptron = (Perceptron) formatter.Deserialize(stream);
+			stream.Close();
+			return perceptron;
 		}
 		public Config GetConfiguration() {
 			return conf;
