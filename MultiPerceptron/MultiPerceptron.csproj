@@ -53,6 +53,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="MathNet.Spatial">
+      <HintPath>..\packages\MathNet.Spatial.0.4.0\lib\net40\MathNet.Spatial.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -71,6 +75,7 @@
     <Compile Include="DataEngine.cs" />
     <Compile Include="Perceptron.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="RenderSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
