@@ -75,7 +75,7 @@
     <Compile Include="DataEngine.cs" />
     <Compile Include="Perceptron.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="RenderSystem.cs" />
+    <Compile Include="Rendering.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

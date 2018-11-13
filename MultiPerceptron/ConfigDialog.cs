@@ -1,40 +1,48 @@
 ﻿using System;
 using Gtk;
 
-namespace MultiPerceptron {
+namespace MultiPerceptron
+{
 
-	public struct Config {
-    
-	    internal bool initialized;
+    [Serializable]
+	public struct Config
+	{
+
+		public bool initialized;
 		// common
-		internal string name;
-		internal int numHidLayers;
-		internal int numInputs, numHiddens, numOutputs;
-		internal int func;
+		public string name;
+		public int numHidLayers;
+		public int numInputs, numHiddens, numOutputs;
+		public int func;
 		// learning
-		internal double learnRate, momentum, stopDW;
-		internal double dropOutProb;
-		internal double crossValRatio;
-		internal double constrainModulo;
-		internal double regularAspect;
-		internal double smartScaleFactor;
+		public double learnRate, momentum, stopDW;
+		public double dropOutProb;
+		public double crossValRatio;
+		public double constrainModulo;
+		public double regularAspect;
+		public double smartScaleFactor;
 
 	}
 
-	public partial class ConfigDialog : Dialog {
+	public partial class ConfigDialog : Dialog
+	{
 
 		Config configuration;
-        internal Config Configuration {
+		internal Config Configuration
+		{
 			get { return configuration; }
-			set {
+			set
+			{
 				ResetTo(value);
 			}
 		}
 
-		internal ConfigDialog() {
-            Build();
-        }
-        void ResetTo(Config config) {
+		internal ConfigDialog()
+		{
+			Build();
+		}
+		void ResetTo(Config config)
+		{
 			configuration = config;
 
 			entryName.Text = config.name;
@@ -55,13 +63,14 @@ namespace MultiPerceptron {
 			hscaleSmartScale.Value = config.smartScaleFactor;
 		}
 
-		protected void ButtonOK(object sender, EventArgs e) {
-            // update conf
+		protected void ButtonOK(object sender, EventArgs e)
+		{
+			// update conf
 			configuration.name = entryName.Text;
-			configuration.numHidLayers = (int) spinLayers.Value;
-			configuration.numInputs = (int) spinInput.Value;
-			configuration.numHiddens = (int) spinHidden.Value;
-			configuration.numOutputs = (int) spinOutput.Value;
+			configuration.numHidLayers = (int)spinLayers.Value;
+			configuration.numInputs = (int)spinInput.Value;
+			configuration.numHiddens = (int)spinHidden.Value;
+			configuration.numOutputs = (int)spinOutput.Value;
 			configuration.func = comboActivFunc.Active * 2;
 			Activators.A = Convert.ToDouble(entryA.Text);
 			Activators.B = Convert.ToDouble(entryB.Text);
@@ -73,25 +82,27 @@ namespace MultiPerceptron {
 			configuration.constrainModulo = hscaleConstrain.Value;
 			configuration.regularAspect = hscaleRegular.Value;
 			configuration.smartScaleFactor = hscaleSmartScale.Value;
-            // update data engine
+			// update data engine
 			DataEngine.DoDecorrelation = checkCorrel.Active;
 			DataEngine.DoStandartization = checkStandard.Active;
 			DataEngine.FilePath = entryFile.Text;
 		}
-		protected void ButtonFile(object sender, EventArgs e) {
+		protected void ButtonFile(object sender, EventArgs e)
+		{
 			FileChooserDialog dialog = new FileChooserDialog(
 						"Select a data file:", this, FileChooserAction.Open,
 						"Cancel", ResponseType.Cancel,
 						"Open", ResponseType.Accept);
 
-			if (dialog.Run() == (int) ResponseType.Accept)
+			if (dialog.Run() == (int)ResponseType.Accept)
 				entryFile.Text = dialog.Filename;
 			else
 				entryFile.Text = "none";
 		}
-		protected void EntryEdited(object sender, EventArgs e) {
-			Entry entry = (Entry) sender;
-            if (!double.TryParse(entry.Text, out double a)) entry.Text = "1.0";
+		protected void EntryEdited(object sender, EventArgs e)
+		{
+			Entry entry = (Entry)sender;
+			if (!double.TryParse(entry.Text, out double a)) entry.Text = "1.0";
 		}
 
 	}

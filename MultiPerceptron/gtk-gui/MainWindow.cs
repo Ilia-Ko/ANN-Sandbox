@@ -29,7 +29,7 @@ public partial class MainWindow
 
 	private global::Gtk.Button button4;
 
-	private global::Gtk.Label GtkLabel3;
+	private global::Gtk.Label GtkLabel4;
 
 	private global::Gtk.Frame frameLearn;
 
@@ -61,7 +61,7 @@ public partial class MainWindow
 
 	private global::Gtk.Button button7;
 
-	private global::Gtk.Label GtkLabel5;
+	private global::Gtk.Label GtkLabel13;
 
 	private global::Gtk.Frame frameVisual;
 
@@ -97,7 +97,11 @@ public partial class MainWindow
 
 	private global::Gtk.Label label12;
 
-	private global::Gtk.Label GtkLabel14;
+	private global::Gtk.CheckButton checkDrawAxis;
+
+	private global::Gtk.CheckButton checkDrawPlanes;
+
+	private global::Gtk.Label GtkLabel16;
 
 	protected virtual void Build()
 	{
@@ -199,11 +203,11 @@ public partial class MainWindow
 		w8.Fill = false;
 		this.GtkAlignment.Add(this.vbox2);
 		this.frame1.Add(this.GtkAlignment);
-		this.GtkLabel3 = new global::Gtk.Label();
-		this.GtkLabel3.Name = "GtkLabel3";
-		this.GtkLabel3.LabelProp = global::Mono.Unix.Catalog.GetString("<b>Configuration</b>");
-		this.GtkLabel3.UseMarkup = true;
-		this.frame1.LabelWidget = this.GtkLabel3;
+		this.GtkLabel4 = new global::Gtk.Label();
+		this.GtkLabel4.Name = "GtkLabel4";
+		this.GtkLabel4.LabelProp = global::Mono.Unix.Catalog.GetString("<b>Configuration</b>");
+		this.GtkLabel4.UseMarkup = true;
+		this.frame1.LabelWidget = this.GtkLabel4;
 		this.vbox1.Add(this.frame1);
 		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.frame1]));
 		w11.Position = 0;
@@ -352,11 +356,11 @@ public partial class MainWindow
 		w23.Fill = false;
 		this.GtkAlignment1.Add(this.vbox3);
 		this.frameLearn.Add(this.GtkAlignment1);
-		this.GtkLabel5 = new global::Gtk.Label();
-		this.GtkLabel5.Name = "GtkLabel5";
-		this.GtkLabel5.LabelProp = global::Mono.Unix.Catalog.GetString("<b>Learning</b>");
-		this.GtkLabel5.UseMarkup = true;
-		this.frameLearn.LabelWidget = this.GtkLabel5;
+		this.GtkLabel13 = new global::Gtk.Label();
+		this.GtkLabel13.Name = "GtkLabel13";
+		this.GtkLabel13.LabelProp = global::Mono.Unix.Catalog.GetString("<b>Learning</b>");
+		this.GtkLabel13.UseMarkup = true;
+		this.frameLearn.LabelWidget = this.GtkLabel13;
 		this.vbox1.Add(this.frameLearn);
 		global::Gtk.Box.BoxChild w26 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.frameLearn]));
 		w26.Position = 1;
@@ -504,22 +508,50 @@ public partial class MainWindow
 		this.vbox6.Add(this.scrolledwindow1);
 		global::Gtk.Box.BoxChild w42 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.scrolledwindow1]));
 		w42.Position = 3;
+		// Container child vbox6.Gtk.Box+BoxChild
+		this.checkDrawAxis = new global::Gtk.CheckButton();
+		this.checkDrawAxis.CanFocus = true;
+		this.checkDrawAxis.Name = "checkDrawAxis";
+		this.checkDrawAxis.Label = global::Mono.Unix.Catalog.GetString("Draw Axis");
+		this.checkDrawAxis.Active = true;
+		this.checkDrawAxis.DrawIndicator = true;
+		this.checkDrawAxis.UseUnderline = true;
+		this.vbox6.Add(this.checkDrawAxis);
+		global::Gtk.Box.BoxChild w43 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.checkDrawAxis]));
+		w43.PackType = ((global::Gtk.PackType)(1));
+		w43.Position = 4;
+		w43.Expand = false;
+		w43.Fill = false;
+		// Container child vbox6.Gtk.Box+BoxChild
+		this.checkDrawPlanes = new global::Gtk.CheckButton();
+		this.checkDrawPlanes.CanFocus = true;
+		this.checkDrawPlanes.Name = "checkDrawPlanes";
+		this.checkDrawPlanes.Label = global::Mono.Unix.Catalog.GetString("Draw Planes");
+		this.checkDrawPlanes.Active = true;
+		this.checkDrawPlanes.DrawIndicator = true;
+		this.checkDrawPlanes.UseUnderline = true;
+		this.vbox6.Add(this.checkDrawPlanes);
+		global::Gtk.Box.BoxChild w44 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.checkDrawPlanes]));
+		w44.PackType = ((global::Gtk.PackType)(1));
+		w44.Position = 5;
+		w44.Expand = false;
+		w44.Fill = false;
 		this.GtkAlignment2.Add(this.vbox6);
 		this.frameVisual.Add(this.GtkAlignment2);
-		this.GtkLabel14 = new global::Gtk.Label();
-		this.GtkLabel14.Name = "GtkLabel14";
-		this.GtkLabel14.LabelProp = global::Mono.Unix.Catalog.GetString("<b>Visualization</b>");
-		this.GtkLabel14.UseMarkup = true;
-		this.frameVisual.LabelWidget = this.GtkLabel14;
+		this.GtkLabel16 = new global::Gtk.Label();
+		this.GtkLabel16.Name = "GtkLabel16";
+		this.GtkLabel16.LabelProp = global::Mono.Unix.Catalog.GetString("<b>Visualization</b>");
+		this.GtkLabel16.UseMarkup = true;
+		this.frameVisual.LabelWidget = this.GtkLabel16;
 		this.vbox1.Add(this.frameVisual);
-		global::Gtk.Box.BoxChild w45 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.frameVisual]));
-		w45.Position = 2;
+		global::Gtk.Box.BoxChild w47 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.frameVisual]));
+		w47.Position = 2;
 		this.hbox1.Add(this.vbox1);
-		global::Gtk.Box.BoxChild w46 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.vbox1]));
-		w46.Position = 1;
-		w46.Expand = false;
-		w46.Fill = false;
-		w46.Padding = ((uint)(6));
+		global::Gtk.Box.BoxChild w48 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.vbox1]));
+		w48.Position = 1;
+		w48.Expand = false;
+		w48.Fill = false;
+		w48.Padding = ((uint)(6));
 		this.Add(this.hbox1);
 		if ((this.Child != null))
 		{
@@ -547,5 +579,7 @@ public partial class MainWindow
 		this.comboY.Changed += new global::System.EventHandler(this.ComboAxisY);
 		this.checkErrTest.Toggled += new global::System.EventHandler(this.CheckErrTest);
 		this.checkErrLearn.Toggled += new global::System.EventHandler(this.CheckErrLearn);
+		this.checkDrawPlanes.Toggled += new global::System.EventHandler(this.CheckDrawPlanes);
+		this.checkDrawAxis.Toggled += new global::System.EventHandler(this.CheckDrawAxis);
 	}
 }
